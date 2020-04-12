@@ -1,0 +1,16 @@
+@inherits StatefulComponent
+
+@{
+    var size = Size > 0
+        ? $"md-{(int)Size}"
+        : null;
+}
+
+@if (string.IsNullOrWhiteSpace(Text))
+{
+    <i class="material-icons @size @Class" style="@Style" @attributes="@ExtraAttributes">@Variant</i>
+}
+else
+{
+    <i class="material-icons @size @Class" style="@Style" @attributes="@ExtraAttributes">@Variant</i>@Text
+}
