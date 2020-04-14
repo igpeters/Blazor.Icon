@@ -1,16 +1,16 @@
-@inherits StatefulComponent
-
-@{
-    var size = Size > 0
-        ? $"md-{(int)Size}"
-        : null;
-}
+@inherits OrphanComponent<MainComponent>
 
 @if (string.IsNullOrWhiteSpace(Text))
 {
-    <i class="material-icons @size @Class" style="@Style" @attributes="@ExtraAttributes">@Variant</i>
+    <i class="material-icons @Class" style="@Style" @attributes="@ExtraAttributes">@Variant</i>
 }
 else
 {
-    <i class="material-icons @size @Class" style="@Style" @attributes="@ExtraAttributes">@Variant</i>@Text
+    string spacing = this.Spacing > 0 ? $"margin-right: {this.Spacing}px;" : null;
+
+    <div class="blazor-icon-container">
+        <i class="material-icons @Class" style="@spacing @Style" @attributes="@ExtraAttributes">@Variant</i>
+        <span class="@Class" style="@Style" @attributes="@ExtraAttributes">@Text</span>
+    </div>
+    
 }
