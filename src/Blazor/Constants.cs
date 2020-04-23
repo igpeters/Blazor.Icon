@@ -7,7 +7,7 @@ namespace Mobsites.Blazor
     {
         public enum Sizes
         {
-            None = 0,
+            Default = 0,
             XS = 18,
             SM = 24,
             LG = 36,

@@ -1,16 +1,42 @@
-@inherits OrphanComponent<MainComponent>
+@inherits StatefulComponent
+
+@{
+    string sizeClass = Size > 0 ? $"md-{(int)Size}" : "md-24";
+    string pointerClass = Clickable ? "blazor-icon-cursor" : null;
+    string image = ContrastMode == ContrastModes.Dark
+        ? DarkModeImage ?? Image
+        : ContrastMode == ContrastModes.Light
+            ? LightModeImage ?? Image
+            : Image;
+
+    int size = Size > 0 ? (int)Size : 24;
+}
 
 @if (string.IsNullOrWhiteSpace(Text))
 {
-    <i class="material-icons @Class" style="@Style" @attributes="@ExtraAttributes">@Variant</i>
+    if (string.IsNullOrWhiteSpace(Image))
+    {
+        <i class="material-icons @sizeClass @pointerClass @Class" style="@Style" @attributes="@ExtraAttributes" aria-hidden="true">@Variant</i>
+    }
+    else
+    {
+        <img src="@image" width="@size" height="@size" class="@pointerClass @Class" style="@Style" @attributes="@ExtraAttributes" />
+    }
 }
 else
 {
-    string spacing = this.Spacing > 0 ? $"margin-right: {this.Spacing}px;" : null;
+    string spacing = Spacing > 0 ? $"margin-right: {Spacing}px;" : null;
 
-    <div class="blazor-icon-container">
-        <i class="material-icons @Class" style="@spacing @Style" @attributes="@ExtraAttributes">@Variant</i>
-        <span class="@Class" style="@Style" @attributes="@ExtraAttributes">@Text</span>
+    <div class="blazor-icon-container @pointerClass @Class" style="@Style" @attributes="@ExtraAttributes">
+        @if (string.IsNullOrWhiteSpace(Image))
+        {
+            <i class="material-icons @sizeClass" style="@spacing" aria-hidden="true">@Variant</i>
+        }
+        else
+        {
+            <img src="@image" width="@size" height="@size" style="@spacing" />
+        }
+        <span class="@sizeClass">@Text</span>
     </div>
     
 }

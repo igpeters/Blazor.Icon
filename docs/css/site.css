@@ -154,6 +154,10 @@ h2 {
     transform: translate(-50%, -50%);
 }
 
+.pointer-cursor {
+    cursor: pointer;
+}
+
 @media (max-width: 767.98px) {
     .main .top-row:not(.auth) {
         display: none;
@@ -184,6 +188,9 @@ h2 {
         height: 100vh;
         position: sticky;
         top: 0;
+    }
+    .navbar a {
+        display: none;
     }
     .main .top-row {
         position: sticky;

@@ -1,4 +1,4 @@
-﻿@inherits LayoutComponentBase
+@inherits LayoutComponentBase
 
 <div class="sidebar">
     <NavMenu />
@@ -6,10 +6,84 @@
 
 <div class="main">
     <div class="top-row px-4">
-        <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
+        <a href="https://github.com/Mobsites/Blazor.Icon" target="_blank" class="ml-md-auto pr-2 pr-md-0"><img src="dark-github.png" width="24" height="24" /></a>
+        <a href="https://github.com/Mobsites" target="_blank" class="pr-2 pr-md-0"><img src="mobsites-logo.png" width="24" height="24" /></a>
+        <a href="https://github.com/allan-mobley-jr" target="_blank"><img src="me.png" width="24" height="24" /></a>
     </div>
 
     <div class="content px-4">
-        @Body
+        <CascadingValue Value="this">
+            @Body
+        </CascadingValue>
     </div>
 </div>
+
+@code {
+    public string Image => UseImage ? "/blazor.png" : null;
+
+    private bool useImage;
+    public bool UseImage
+    {
+        get => useImage;
+        set 
+        {
+            useImage = value;
+            StateHasChanged();
+        }
+    }
+
+    private string variant = "alternate_email";
+    public string Variant
+    {
+        get => variant; 
+        set
+        {
+            variant = value;
+            StateHasChanged();
+        }
+    }
+
+    private Icon.Sizes size = Icon.Sizes.SM;
+    public Icon.Sizes Size
+    {
+        get => size;
+        set 
+        {
+            size = value;
+            StateHasChanged();
+        }
+    }
+
+    private string color = "#5c2d91";
+    public string Color
+    {
+        get => color;
+        set 
+        {
+            color = value;
+            StateHasChanged();
+        }
+    }
+
+    private string text = "Blazor";
+    public string Text
+    {
+        get => text;
+        set 
+        {
+            text = value;
+            StateHasChanged();
+        }
+    }
+
+    private int spacing = 10;
+    public int Spacing
+    {
+        get => spacing;
+        set 
+        {
+            spacing = value;
+            StateHasChanged();
+        }
+    }
+}
