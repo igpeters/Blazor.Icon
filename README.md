@@ -20,7 +20,7 @@ A Blazor UI component for rendering an icon.
 
 Tap the link above to go to a live demo. Try some of the options to get an idea of what's possible. Then reload the app in the browser and watch how the state was kept! 
 
-Check out its source code [here](./demo).
+Check out its source code [here](./samples).
 
 ## For
 
