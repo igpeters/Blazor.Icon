@@ -31,9 +31,7 @@ Check out its source code [here](./samples).
 
 ###### .NETStandard 2.0
 
-* Microsoft.AspNetCore.Components (>= 3.1.3)
-* Microsoft.AspNetCore.Components.Web (>= 3.1.3)
-* Mobsites.Blazor.BaseComponents (>= 1.0.1)
+* Mobsites.Blazor.BaseComponents (>= 1.0.2)
 
 ## Design and Development
 
@@ -42,5 +40,11 @@ The design and development of this Blazor component was heavily guided by Micros
 As for the non-C# implementation of this component library, obviously the Material Icon [docs](https://google.github.io/material-design-icons/#icon-font-for-the-web) were consulted carefully. We have elected to reference Google's CDN web font package directly instead of using npm to webpack them ourselves because Google packaged all the material icons into a single font that takes advantage of the typographic rendering capabilities of modern browsers, and Google correctly serve up the font specific to the browser.
 
 ## Getting Started
+
+1. Add [Nuget](https://www.nuget.org/packages/Mobsites.Blazor.Icon/) package:
+
+```shell
+dotnet add package Mobsites.Blazor.Icon
+```
 
 Check out our new [docs](https://www.mobsites.com/blazor/icon) to help you get started.

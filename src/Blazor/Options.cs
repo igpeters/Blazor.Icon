@@ -8,7 +8,7 @@ namespace Mobsites.Blazor
         /// <summary>
         /// Abstract base representing options that can be saved in browser storage.
         /// </summary>
-        protected class Options : StatefulComponentOptions
+        internal class Options : StatefulComponentOptions
         {
             /************************************************************************
             *
@@ -28,22 +28,36 @@ namespace Mobsites.Blazor
             *
             ***********************************************************************/
 
+            /// <summary>
+            /// Option for Material Icon ligature or textual name.
+            /// </summary>
             public string Variant { get; set; }
 
             private Sizes? size;
-            public Sizes? Size 
-            { 
-                get => size; 
-                set => size = this.NullOnZero<Sizes?>(value); 
+
+            /// <summary>
+            /// Option for the size of icon to render. Defaults to 24px.
+            /// </summary>
+            public Sizes? Size
+            {
+                get => size;
+                set => size = this.NullOnZero<Sizes?>(value);
             }
 
+            /// <summary>
+            /// Option for optional accompanying text to display.
+            /// </summary>
             public string Text { get; set; }
 
             private int? spacing;
-            public int? Spacing 
-            { 
-                get => spacing; 
-                set => spacing = this.NullOnZero<int?>(value); 
+
+            /// <summary>
+            /// Option for margin spacing between icon and accompanying text. 
+            /// </summary>
+            public int? Spacing
+            {
+                get => spacing;
+                set => spacing = this.NullOnZero<int?>(value);
             }
 
         }

@@ -9,7 +9,7 @@ namespace Mobsites.Blazor
     /// <summary>
     /// UI component for rendering an icon.
     /// </summary>
-    public partial class Icon
+    public sealed partial class Icon
     {
         /****************************************************
         *
@@ -23,7 +23,7 @@ namespace Mobsites.Blazor
         [Parameter] public string Variant { get; set; }
 
         /// <summary>
-        /// Call back event for notifying another component that this property changed. 
+        /// Call back event for notifying another component that this property changed.
         /// </summary>
         [Parameter] public EventCallback<string> VariantChanged { get; set; }
 
@@ -98,6 +98,9 @@ namespace Mobsites.Blazor
         *
         ****************************************************/
 
+        /// <summary>
+        /// Life cycle method for when component has been rendered in the dom and javascript interopt is fully ready.
+        /// </summary>
         protected async override Task OnAfterRenderAsync(bool firstRender)
         {
             var options = await this.GetState<Icon, Options>();
@@ -123,13 +126,16 @@ namespace Mobsites.Blazor
                     options = this.GetOptions();
                 }
             }
-            
+
             await this.Save<Icon, Options>(options);
         }
 
-        protected Options GetOptions()
+        /// <summary>
+        /// Get current or storage-saved options for keeping state.
+        /// </summary>
+        internal Options GetOptions()
         {
-            var options = new Options 
+            var options = new Options
             {
                 Variant = this.Variant,
                 Size = this.Size,
@@ -142,7 +148,11 @@ namespace Mobsites.Blazor
             return options;
         }
 
-        protected async Task CheckState(Options options)
+        /// <summary>
+        /// Check whether storage-retrieved options are different than current
+        /// and thereby need to notify parents of change when keeping state.
+        /// </summary>
+        internal async Task CheckState(Options options)
         {
             bool stateChanged = false;
 
@@ -173,11 +183,6 @@ namespace Mobsites.Blazor
 
             if (await base.CheckState(options) || stateChanged)
                 StateHasChanged();
-        }
-
-        public override void Dispose()
-        {
-            this.initialized = false;
         }
     }
 }
