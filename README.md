@@ -16,7 +16,7 @@ A Blazor UI component for rendering an icon.
 * Font Awesome
 * Open Iconic
 
-## [Demo](https://www.mobsites.com/Blazor.Icon/)
+## [Demo](https://icon.mobsites.com)
 
 Tap the link above to go to a live demo. Try some of the options to get an idea of what's possible. Then reload the app in the browser and watch how the state was kept! 
 
