@@ -41,10 +41,4 @@ As for the non-C# implementation of this component library, obviously the Materi
 
 ## Getting Started
 
-1. Add [Nuget](https://www.nuget.org/packages/Mobsites.Blazor.Icon/) package:
-
-```shell
-dotnet add package Mobsites.Blazor.Icon
-```
-
 Check out our new [docs](https://www.mobsites.com/blazor/icon) to help you get started.

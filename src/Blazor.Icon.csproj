@@ -16,8 +16,8 @@
     <IsPackable>true</IsPackable>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>mobsites-logo.png</PackageIcon>
-    <PackageReleaseNotes>Add missing xml docs and make components sealed.</PackageReleaseNotes>
-    <PackageVersion>1.0.1</PackageVersion>
+    <PackageReleaseNotes>Addressed ios rem issue.</PackageReleaseNotes>
+    <PackageVersion>1.0.2</PackageVersion>
     <PackageTags>blazor;component;material;icons</PackageTags>
     <PackageProjectUrl>https://www.mobsites.com</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
