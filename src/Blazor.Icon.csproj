@@ -16,17 +16,17 @@
     <IsPackable>true</IsPackable>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>mobsites-logo.png</PackageIcon>
-    <PackageReleaseNotes>Addressed ios rem issue.</PackageReleaseNotes>
-    <PackageVersion>1.0.2</PackageVersion>
+    <PackageReleaseNotes>Updated dependencies.</PackageReleaseNotes>
+    <PackageVersion>1.0.3</PackageVersion>
     <PackageTags>blazor;component;material;icons</PackageTags>
-    <PackageProjectUrl>https://www.mobsites.com</PackageProjectUrl>
+    <PackageProjectUrl>https://www.mobsites.com/blazor/icon</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/Mobsites/Blazor.Icon</RepositoryUrl>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Mobsites.Blazor.BaseComponents" Version="1.0.2" />
+    <PackageReference Include="Mobsites.Blazor.BaseComponents" Version="1.0.3" />
   </ItemGroup>
 
   <ItemGroup>
